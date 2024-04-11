@@ -30,6 +30,8 @@ const login = () => {
     router.push({ name: 'game' });
   }
 };
+
+type TypeMe = any;
 </script>
 
 <template>
@@ -41,7 +43,7 @@ const login = () => {
           <v-form @submit.prevent="login">
             <v-text-field
               v-model="v$.email.$model"
-              :error-messages="v$.email.$errors.map((e) => e.$message)"
+              :error-messages="v$.email.$errors.map((e: TypeMe) => e.$message)"
               label="Email"
               outlined
               dense
@@ -51,7 +53,7 @@ const login = () => {
 
             <v-text-field
               v-model="v$.password.$model"
-              :error-messages="v$.password.$errors.map((e) => e.$message)"
+              :error-messages="v$.password.$errors.map((e: TypeMe) => e.$message)"
               label="Пароль"
               outlined
               dense

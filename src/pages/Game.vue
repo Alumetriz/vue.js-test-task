@@ -25,22 +25,21 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, watch } from 'vue';
 
 const sizeX = ref('0');
 const sizeY = ref('0');
-const grid = ref([]);
+const grid = ref<boolean[][]>([]);
 
 const buildGrid = () => {
   const x = +sizeX.value || 0;
   const y = +sizeY.value || 0;
-  grid.value = Array(x)
-    .fill()
+  grid.value = Array(x).fill(false)
     .map(() => Array(y).fill(false));
 };
 
-const toggleSquare = (x, y) => {
+const toggleSquare = (x: number, y: number) => {
   grid.value[x][y] = !grid.value[x][y];
 };
 
