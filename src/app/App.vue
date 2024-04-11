@@ -1,9 +1,13 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>
+  <div class="wrapper">
     <router-view />
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.wrapper {
+  height: 100%;
+}
+</style>
